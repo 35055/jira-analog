@@ -14,6 +14,8 @@ type TProps = {
     setEditValue: (project: Project | null) => void;
 }
 
+type TValues = { title: string; description: string; photo: File | null; };
+
 export const ProjectModal = (props: TProps) => {
     const { opened, data, close, onEdit, onCreated, setEditValue } = props;
 
@@ -34,7 +36,7 @@ export const ProjectModal = (props: TProps) => {
         },
     });
 
-    const handleCreateProject = async (values: any) => {
+    const handleCreateProject = async (values: TValues) => {
         const created = await createProject(values);
         if (!created) return;
 
@@ -43,7 +45,7 @@ export const ProjectModal = (props: TProps) => {
         form.reset();
     }
 
-    const handleEditProject = async (values: any) => {
+    const handleEditProject = async (values: TValues) => {
         if (!data) return;
         const edited = await editProject({
             ...values,

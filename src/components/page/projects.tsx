@@ -41,7 +41,7 @@ export const Projects = () => {
         }}>
             {
                 projects.map((el) => (
-                    <CardProject el={el} handleEdit={handleEdit} setProjects={setProjects} />
+                    <CardProject key={el.id} el={el} handleEdit={handleEdit} setProjects={setProjects} />
                 ))
             }
         </Box>
