@@ -28,6 +28,10 @@ export const Status = () => {
         openStatus();
     }
 
+    const handleConsole = () => {
+        console.log("status deleted");
+    }
+
 
     const rows = elements.map((element, i) => (
         <tr key={element.name}>
@@ -49,7 +53,7 @@ export const Status = () => {
     ));
 
     return <Box>
-        <DeleteModal title="Delete Status" opened={openedDelete} close={closeDelete} />
+        <DeleteModal deleteFunc={handleConsole} title="Delete Status" opened={openedDelete} close={closeDelete} />
         <StatusModal opened={openedStatus} close={closeStatus} data={editdata} />
         <Title order={2}>Status</Title>
         <Box sx={{

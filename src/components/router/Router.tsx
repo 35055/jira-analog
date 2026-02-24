@@ -1,5 +1,5 @@
 import { Route, Routes, HashRouter } from "react-router-dom"
-import { Category, Layout, Projects, Status } from "../page"
+import { Layout, Projects, Status } from "../page"
 
 
 export const RouterComponent = () => {
@@ -7,7 +7,7 @@ export const RouterComponent = () => {
         <Routes>
             <Route path="/" element={<Layout />}>
                 <Route index element={<Projects />} />
-                <Route path="/category" element={<Category />} />
+                {/* <Route path="/category" element={<Category />} /> */}
                 <Route path="/status" element={<Status />} />
             </Route>
         </Routes>
